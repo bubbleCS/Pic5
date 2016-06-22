@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Pic5</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string-array name="Option_Name">
+        <item>من نحن</item>
+        <item>الفروع</item>
+        <item>رقم حساب الإدارة</item>
+        <item>موقع الويب</item>
+        <item>اين نحن؟</item>
+    </string-array>
+
+
+    <array name="OptionIcon">
+        <item>@mipmap/lamp</item>
+        <item>@mipmap/brancges</item>
+        <item>@mipmap/bank_acount</item>
+        <item>@mipmap/website</item>
+        <item>@mipmap/where_is_us</item>
+    </array>
+
+    <array name="MoveIcon">
+        <item>@drawable/arrow_left</item>
+        <item>@drawable/arrow_left</item>
+        <item>@drawable/arrow_left</item>
+        <item>@drawable/arrow_left</item>
+        <item>@drawable/arrow_left</item>
+    </array>
+</resources>
