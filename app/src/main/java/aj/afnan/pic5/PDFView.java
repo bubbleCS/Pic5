@@ -49,7 +49,7 @@ public class PDFView extends AppCompatActivity {
     public class MywebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView View,String url) {
-///mmbbbb
+///mmbbbbjoijioioi
             if (Uri.parse(url).getHost().equals((""))) {
                 return false;
             }
