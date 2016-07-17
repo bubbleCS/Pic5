@@ -36,7 +36,6 @@
         android:id="@+id/imageViewMove"
         android:layout_alignParentLeft="true"
         android:layout_weight="1"
-
         android:layout_marginTop="12dp" />
 
 </LinearLayout>

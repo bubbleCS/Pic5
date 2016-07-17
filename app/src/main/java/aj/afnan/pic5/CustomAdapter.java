@@ -1,69 +1,109 @@
 package aj.afnan.pic5;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
+import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
-import java.util.List;
+import java.util.ArrayList;
+
 /**
- * Created by afnan on 6/21/16.
+ * Created by afnan on 7/13/16.
  */
-public class CustomAdapter  extends BaseAdapter {
-        Context context ;
-        List<RowItem> rowItems;
+public class CustomAdapter extends BaseExpandableListAdapter {
 
-        CustomAdapter ( Context context ,List<RowItem> rowItems){
-            this.context = context;
-            this.rowItems = rowItems;
-        }
+    private Context context;
+    private ArrayList<ExpandableListGroupInfo> deptList;
 
-        @Override
-        public int getCount(){return rowItems.size();}
-
-        @Override
-        public Object getItem(int posotion){return  rowItems.get(posotion);}
-
-        @Override
-        public long getItemId(int postion){return rowItems.indexOf(getItem(postion));}
-
-        private class ViewHolder{
-            ImageView Icon_id;
-            ImageView Move_id;
-            TextView Option_Name;
-        }
-
-        @Override
-        public View getView (int postion , View convertView , ViewGroup parent){
-            ViewHolder holder = null;
-
-            LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            if (convertView == null){
-                convertView=mInflater.inflate(R.layout.single_row, null);
-                holder=new ViewHolder();
-
-                holder.Option_Name=(TextView) convertView.findViewById(R.id.textViewRow);
-                holder.Icon_id=(ImageView) convertView.findViewById(R.id.imageViewIcon);
-                holder.Move_id=(ImageView) convertView.findViewById(R.id.imageViewMove);
-
-                RowItem row_pos = rowItems.get(postion);
-                holder.Option_Name.setText(row_pos.getOption_Name());
-                holder.Icon_id.setImageResource(row_pos.getIcon_id());
-                holder.Move_id.setImageResource(row_pos.getMove_id());
-
-
-                convertView.setTag(holder);
-            } else {
-                holder = (ViewHolder) convertView.getTag();
-            }
-
-            return convertView;
-        }
+    public CustomAdapter(Context context, ArrayList<ExpandableListGroupInfo> deptList) {
+        this.context = context;
+        this.deptList = deptList;
 
     }
 
+    @Override
+    public Object getChild(int groupPosition, int childPosition) {
+        ArrayList<ExpandableListChildInfo> productList = deptList.get(groupPosition).getProductList();
+        return productList.get(childPosition);
+    }
 
+    @Override
+    public long getChildId(int groupPosition, int childPosition) {
+        return childPosition;
+    }
+
+    @Override
+    public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
+                             View view, ViewGroup parent) {
+
+        ExpandableListChildInfo detailInfo = (ExpandableListChildInfo) getChild(groupPosition, childPosition);
+        if (view == null) {
+            LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = infalInflater.inflate(R.layout.child_items, null);
+        }
+
+
+
+        TextView sequence = (TextView) view.findViewById(R.id.sequence);
+        sequence.setText(detailInfo.getSequence().trim() );
+        TextView childItem = (TextView) view.findViewById(R.id.childItem);
+        childItem.setText(detailInfo.getName().trim());
+
+        return view;
+    }
+
+    @Override
+    public int getChildrenCount(int groupPosition) {
+
+        ArrayList<ExpandableListChildInfo> productList = deptList.get(groupPosition).getProductList();
+        return productList.size();
+
+    }
+
+    @Override
+    public Object getGroup(int groupPosition) {
+        return deptList.get(groupPosition);
+    }
+
+    @Override
+    public int getGroupCount() {
+        return deptList.size();
+    }
+
+    @Override
+    public long getGroupId(int groupPosition) {
+        return groupPosition;
+    }
+
+    @Override
+    public View getGroupView(int groupPosition, boolean isLastChild, View view,
+                             ViewGroup parent) {
+
+
+        ExpandableListGroupInfo headerInfo = (ExpandableListGroupInfo) getGroup(groupPosition);
+        if (view == null) {
+            LayoutInflater inf = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inf.inflate(R.layout.group_items, null);
+        }
+
+        TextView heading = (TextView) view.findViewById(R.id.heading);
+        heading.setText(headerInfo.getName().trim());
+
+        return view;
+    }
+
+    @Override
+    public boolean hasStableIds() {
+        return true;
+    }
+
+    @Override
+    public boolean isChildSelectable(int groupPosition, int childPosition) {
+        return true;
+    }
+
+
+
+}

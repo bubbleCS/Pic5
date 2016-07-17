@@ -9,4 +9,17 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="aj.afnan.pic5.WebSite">
 
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webViewWebSite"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false"
+        android:accessibilityLiveRegion="none"
+        android:layout_alignParentTop="false"
+        android:layout_alignWithParentIfMissing="false" />
+
 </RelativeLayout>

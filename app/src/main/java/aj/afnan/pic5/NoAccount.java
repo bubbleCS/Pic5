@@ -11,5 +11,10 @@ public class NoAccount extends AppCompatActivity {
         setContentView(R.layout.activity_no_account);
         setTitle("رقم حساب الادارة");
 
+        TouchImageView img = new TouchImageView(this);
+        img.setImageResource(R.drawable.account);
+        img.setMaxZoom(4f);
+        setContentView(img);
+
     }
 }

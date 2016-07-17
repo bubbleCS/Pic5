@@ -58,7 +58,7 @@ public class ManagementActivity extends AppCompatActivity implements AdapterView
         }
 
         mylistview = (ListView) findViewById(R.id.listViewMangment); //to create list view
-        CustomAdapter adapter = new CustomAdapter(this, rowItems);
+        CustomAdapter1 adapter = new CustomAdapter1(this, rowItems);
         mylistview.setAdapter(adapter);
 
         mylistview.setOnItemClickListener(this);
@@ -84,7 +84,7 @@ public class ManagementActivity extends AppCompatActivity implements AdapterView
                 startActivity(AboutUs);
             }
             if (position == 4) {
-                Intent AboutUs = new Intent(getApplicationContext(), Location.class);
+                Intent AboutUs = new Intent(getApplicationContext(), MapsActivity.class);
                 startActivity(AboutUs);
             }
 
