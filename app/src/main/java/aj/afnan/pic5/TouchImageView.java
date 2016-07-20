@@ -43,6 +43,7 @@ public class TouchImageView extends ImageView {
     public TouchImageView(Context context) {
         super(context);
         sharedConstructing(context);
+
     }
 
     public TouchImageView(Context context, AttributeSet attrs) {

@@ -3,8 +3,9 @@ package aj.afnan.pic5;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.webkit.WebSettings;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -20,22 +21,33 @@ public class PDFView extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        String name= bundle.getString("name");
+        String name= bundle.getString("https://jackcanfield.com/images/stories/the-success-principles-2-chapters.pdf");
 
-      /*  W=(WebView)findViewById(R.id.webViewPDF);
+        W=(WebView)findViewById(R.id.webViewPDF);
         W.setWebViewClient(new MywebViewClient());
         W.getSettings().setJavaScriptEnabled(true);
         W.getSettings().setBuiltInZoomControls(true);
         W.getSettings().setLoadsImagesAutomatically(true);
-        W.loadUrl(name);*/
+        W.loadUrl(name);
 
-
-        WebView webView= new WebView( this);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); //home icon
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Home = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(Home);
+            }
+        });
+        /*WebView webView= new WebView( this);
         setContentView(webView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setPluginState(WebSettings.PluginState.ON);
         webView.loadUrl("http://tvtc.gov.sa/Arabic/Departments/Departments/pt/InformationCenter/ReportsAndGuides/Documents/training_guids.pdf");
         setContentView(webView);
+        */
+
+       // startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(name)));
+
 
           /*  webView= (WebView)findViewById(R.id.webView);
             WebSettings webSettings = webView.getSettings();

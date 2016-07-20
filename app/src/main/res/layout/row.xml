@@ -7,18 +7,6 @@
     android:weightSum="6"
     >
 
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageViewIcon"
-        android:contentDescription="desc"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_alignParentRight="true"
-        android:layout_weight="1"
-        android:paddingTop="5dp"
-        />
-
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -27,8 +15,8 @@
         android:layout_gravity="center_horizontal|top"
         android:layout_marginTop="10dp"
         android:paddingBottom="10dp"
-        android:textSize="23dp"
-        android:layout_weight="4"
+        android:textSize="20dp"
+        android:layout_weight="5"
         android:textColor="#ffffff"/>
 
     <ImageView

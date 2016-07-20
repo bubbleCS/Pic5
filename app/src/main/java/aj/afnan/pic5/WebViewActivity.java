@@ -2,6 +2,7 @@ package aj.afnan.pic5;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,6 +25,16 @@ public class WebViewActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_web_view);
             setTitle("موقع الويب");
+
+            FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); //home icon
+            fab.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent Home = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(Home);
+                }
+            });
+
 
             WebSite = (WebView) findViewById(R.id.webView);
             WebSettings WebSettingsForWebSite= WebSite.getSettings();

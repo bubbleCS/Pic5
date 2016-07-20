@@ -69,9 +69,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button Contactus = ( Button ) findViewById(R.id.ButtonContactUs);
+        Contactus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Contactus  = new Intent(getApplicationContext(), ContactUs.class)  ;
+                startActivity(Contactus );
+            }
+        });
 
+        Button Forms = ( Button ) findViewById(R.id.ButtonForms);
+        Forms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
+                String name = "http://www.tvtc.gov.sa/Arabic/Departments/Departments/pt/InformationCenter/Files/Pages/default.aspx";
+                Bundle bundle = new Bundle();
+                bundle.putString("name", name);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
-
+        Button AboutApp = ( Button ) findViewById(R.id.ButtonAboutApp);
+        AboutApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent AboutApp  = new Intent(getApplicationContext(), AboutApp.class)  ;
+                startActivity(AboutApp );
+            }
+        });
 
 
 

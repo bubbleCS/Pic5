@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#d2d2d2">
+    android:background="#d2d2d2"
+    >
+
 
     <ExpandableListView
         android:id="@+id/simpleExpandableListView"
@@ -12,17 +14,38 @@
         android:divider="#A8a8a8"
         android:childDivider="#d2d2d2"
         android:dividerHeight="1dp"
-        android:layoutDirection="rtl"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
         android:background="#D2D2D2"
-        android:layout_alignParentTop="true"
+        android:paddingTop="16dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="56dp"
-
         />
 
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/home"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="18dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewLogoDown"
+        android:src="@drawable/logodown"
+        android:layout_toStartOf="@+id/fab"
+        android:layout_alignTop="@+id/fab"
+        android:layout_toLeftOf="@+id/fab"
+        android:layout_alignBottom="@+id/fab" />
     />
 
 </RelativeLayout>

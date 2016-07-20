@@ -17,4 +17,15 @@
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/home"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/listViewMangment"
+        android:layout_alignEnd="@+id/listViewMangment" />
+
 </RelativeLayout>

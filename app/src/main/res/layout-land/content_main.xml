@@ -124,20 +124,20 @@
         android:textSize="10sp"
         android:drawableTop="@mipmap/aboutus"
         android:background="#efbcbc"
-        android:layout_alignTop="@+id/Button2"
+        android:layout_alignTop="@+id/ButtonAboutApp"
         android:layout_alignLeft="@+id/ButtonCalender"
         android:layout_alignStart="@+id/ButtonCalender" />
 
 
     <Button
-        android:id="@+id/Button2"
+        android:id="@+id/ButtonAboutApp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="٢"
         android:textSize="10sp"
         android:drawableTop="@mipmap/aboutus"
-        android:background="@drawable/rectangle"
+        android:background="@drawable/square"
         android:layout_alignTop="@+id/ButtonForms"
         android:layout_alignLeft="@+id/ButtonGuides"
         android:layout_alignStart="@+id/ButtonGuides" />

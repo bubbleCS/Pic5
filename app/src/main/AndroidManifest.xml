@@ -31,12 +31,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".GuidesActivity" />
         <activity android:name=".ManagementActivity" />
         <activity android:name=".AboutUs" />
-        <activity android:name=".Branches" />
         <activity android:name=".NoAccount" />
-        <activity android:name=".WebSite" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -59,7 +56,11 @@
         <activity android:name=".WebViewActivity" />
         <activity android:name=".TrainingFacility" />
         <activity android:name=".Exams" />
-        <activity android:name=".PDFView"></activity>
+        <activity android:name=".PDFView" />
+        <activity android:name=".ContactUs" />
+        <activity android:name=".SendEmail" />
+        <activity android:name=".GuidesActivity" />
+        <activity android:name=".AboutApp"></activity>
     </application>
 
 </manifest>

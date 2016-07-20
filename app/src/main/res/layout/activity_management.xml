@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:src="@mipmap/home"
+        android:src="@drawable/home"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/listViewMangment"
         android:layout_alignEnd="@+id/listViewMangment" />
@@ -38,6 +38,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignTop="@+id/fab"
         android:layout_toLeftOf="@+id/fab" />
+
+
 
 </RelativeLayout>
 

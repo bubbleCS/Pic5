@@ -1,6 +1,7 @@
 package aj.afnan.pic5;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,17 @@ private ExpandableListView simpleExpandableListView;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exams);
+        setTitle("الاختبارات");
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); //home icon
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Home = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(Home);
+            }
+        });
+
 
         // add data for displaying in expandable list view
         loadData();

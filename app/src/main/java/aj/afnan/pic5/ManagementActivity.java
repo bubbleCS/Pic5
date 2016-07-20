@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,19 +27,19 @@ public class ManagementActivity extends AppCompatActivity implements AdapterView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_management);
 
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-       getSupportActionBar().setCustomView(R.layout.action_bar);
+       // getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+      // getSupportActionBar().setCustomView(R.layout.action_bar);
         //getSupportActionBar().setTitle("عن الادارة");
 
 
-       // setTitle("عن الادارة"); //title of activity
+        setTitle("عن الادارة"); //title of activity
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab); //home icon
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent Home = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(Home);
             }
         });
 
@@ -72,16 +70,24 @@ public class ManagementActivity extends AppCompatActivity implements AdapterView
                 startActivity(AboutUs);
             }
             if (position == 1) {
-                Intent AboutUs = new Intent(getApplicationContext(), Branches.class);
-                startActivity(AboutUs);
+                Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
+                String name = "http://www.tvtc.gov.sa/Arabic/Departments/Departments/pt/AboutDepartment/Pages/Outemployeetel.aspx";
+                Bundle bundle = new Bundle();
+                bundle.putString("name", name);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
             if (position == 2) {
                 Intent AboutUs = new Intent(getApplicationContext(), NoAccount.class);
                 startActivity(AboutUs);
             }
             if (position == 3) {
-                Intent AboutUs = new Intent(getApplicationContext(), WebSite.class);
-                startActivity(AboutUs);
+                Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
+                String name = "http://www.tvtc.gov.sa/Arabic/Departments/Departments/pt/Pages/default.aspx";
+                Bundle bundle = new Bundle();
+                bundle.putString("name", name);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
             if (position == 4) {
                 Intent AboutUs = new Intent(getApplicationContext(), MapsActivity.class);

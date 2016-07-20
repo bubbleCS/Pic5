@@ -28,6 +28,30 @@
         <item>@drawable/arrow_left</item>
     </array>
 
+    <string-array name="Option_Name_ContactUs">
+        <item> راسلنا</item>
+        <item>أرقام التواصل </item>
+        <item>مقر الإدارة</item>
+        <item>تويتر</item>
+
+    </string-array>
+
+
+    <array name="OptionIcon_ContactUs">
+        <item>@drawable/email</item>
+        <item>@drawable/ic_phone_24dp</item>
+        <item>@drawable/location</item>
+        <item>@mipmap/twitter</item>
+    </array>
+
+
+    <string-array name="Option_Name_Guids">
+        <item>دليل تعليمات التدريب</item>
+        <item>القواعد والاجراءات التنفيذية للائحة التدريب في منشآت التدريب الأهلية</item>
+        <item>لائحة التدريب في منشآت التدريب الأهلي</item>
+        <item>لائحة تنظيم الشهادات الإحترافية</item>
+        <item>ضوابط الشهادات الإحترافية</item>
+    </string-array>
 
 
     <string name="AboutUsText">
@@ -53,9 +77,8 @@
 ٢/ الإشراف على الوحدات الإدارية المرتبطة بها.
 \n
 ٣/ الإشراف على تطبيق السياسات والأنظمة واللوائح والتعليمات المعتمدة في مجال التدريب الأهلي والوحدات التي تشرف عليها.
-
 \n
-٤/  إقتراح السياسات والخطط للتدريب في القطاع الأهلي .
+٤/  إقتراح السياسات والخطط للتدريب في القطاع الأهلي.
 \n
 ٥/  إعداد المعايير واللوائح والاجراءات اللازمة لتنظيم التدريب في القطاع الأهلي.
 \n
@@ -68,7 +91,7 @@
 
 \n
 <b>
-الإقسام :
+الأقسام :
 </b>
 \n
 ١/ إدارة الرخص والإشراف والمتابعة.
