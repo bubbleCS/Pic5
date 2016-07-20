@@ -60,7 +60,8 @@
         <activity android:name=".ContactUs" />
         <activity android:name=".SendEmail" />
         <activity android:name=".GuidesActivity" />
-        <activity android:name=".AboutApp"></activity>
+        <activity android:name=".AboutApp" />
+        <activity android:name=".Calendar"></activity>
     </application>
 
 </manifest>

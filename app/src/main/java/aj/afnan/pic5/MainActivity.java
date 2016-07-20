@@ -101,6 +101,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        Button Calendar = ( Button ) findViewById(R.id.ButtonCalender);
+        Calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent Calendar  = new Intent(getApplicationContext(), Calendar.class)  ;
+                startActivity(Calendar );
+            }
+        });
+
+
+
 
     }
 
