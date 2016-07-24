@@ -189,12 +189,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="WWW.gtpt.gotevot.edu.sa"
-        android:id="@+id/textView"
+        android:text="www.tvtc.gov.sa"
+        android:id="@+id/textViewWeb"
         android:layout_marginTop="70sp"
         android:layout_below="@+id/relativeLayout"
         android:layout_toLeftOf="@+id/imageView"
-        android:layout_toStartOf="@+id/imageView" />
+        android:layout_toStartOf="@+id/imageView"
+        android:paddingLeft="34sp"/>
 
 
 </RelativeLayout>

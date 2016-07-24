@@ -1,7 +1,10 @@
 package aj.afnan.pic5;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -83,13 +86,57 @@ public class ContactUs extends AppCompatActivity implements AdapterView.OnItemCl
             Intent WhereUs = new Intent(getApplicationContext(), MapsActivity.class);
             startActivity(WhereUs);
         }
+
         if (position == 3) {
-            Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
+            /*Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
             String name = "https://twitter.com/tvtc_pt";
             Bundle bundle = new Bundle();
             bundle.putString("name", name);
             intent.putExtras(bundle);
-            startActivity(intent);
+            startActivity(intent);*/
+            Intent intent = new Intent();
+            intent.setType("text/plain");
+            intent.setAction(Intent.ACTION_SEND);
+            final PackageManager packageManager = getPackageManager();
+            List<ResolveInfo> list = packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+
+            for (ResolveInfo resolveInfo : list)
+            {
+                String packageName = resolveInfo.activityInfo.packageName;
+
+                //In case that the app is installed, lunch it.
+                if (packageName != null && packageName.equals("com.twitter.android"))
+                {
+                    try
+                    {
+                        String formattedTwitterAddress = "twitter://tvtc_pt/" ;
+                        Intent browseTwitter = new Intent(Intent.ACTION_VIEW, Uri.parse(formattedTwitterAddress));
+                        long twitterId = 423648077;
+                        // browseTwitter.putExtra("user_id", twitterId);
+                        browseTwitter.putExtra("tvtc_pt", twitterId);
+                        startActivity(browseTwitter);
+
+                        return;
+                    }
+                    catch (Exception e)
+                    {
+
+                    }
+                }
+            }
+
+            //If it gets here it means that the twitter app is not installed. Therefor, lunch the browser.
+            try
+            {
+                String twitterName = "tvtc_pt";
+                String formattedTwitterAddress = "http://twitter.com/" + twitterName;
+                Intent browseTwitter = new Intent(Intent.ACTION_VIEW, Uri.parse(formattedTwitterAddress));
+                startActivity(browseTwitter);
+            }
+            catch (Exception e)
+            {
+
+            }
         }
 
     }

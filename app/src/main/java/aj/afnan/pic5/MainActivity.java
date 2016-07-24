@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -83,8 +84,8 @@ public class MainActivity extends AppCompatActivity {
         Forms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.tvtc.gov.sa/Arabic/Departments/Departments/pt/InformationCenter/Files/Pages/default.aspx"));
-                startActivity(intent);
+                Intent Forms  = new Intent(getApplicationContext(), Forms.class)  ;
+                startActivity(Forms );
             }
         });
 
@@ -107,6 +108,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        TextView Web = ( TextView ) findViewById(R.id.textViewWeb);
+        Web.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.tvtc.gov.sa/Arabic/Departments/Departments/pt/Pages/default.aspx"));
+                startActivity(intent);
+            }
+        });
 
 
 

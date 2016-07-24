@@ -26,6 +26,8 @@
         <item>@drawable/arrow_left</item>
         <item>@drawable/arrow_left</item>
         <item>@drawable/arrow_left</item>
+        <item>@drawable/arrow_left</item>
+        <item>@drawable/arrow_left</item>
     </array>
 
     <string-array name="Option_Name_ContactUs">
@@ -51,6 +53,17 @@
         <item>لائحة التدريب في منشآت التدريب الأهلي</item>
         <item>لائحة تنظيم الشهادات الإحترافية</item>
         <item>ضوابط الشهادات الإحترافية</item>
+    </string-array>
+
+    <string-array name="Option_Name_Forms">
+        <item> نماذج الرخص</item>
+        <item> نماذج الدبلوم أو البرامج التدريبيية</item>
+        <item> نماذج الدورات التأهيلية</item>
+        <item> نماذج الدورات التطويريية</item>
+        <item> التدريب التعاوني</item>
+        <item> المعادلات</item>
+        <item> الشهادات الإحترافية</item>
+
     </string-array>
 
 
