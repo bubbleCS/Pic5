@@ -86,26 +86,32 @@ public class SendEmail extends AppCompatActivity {
                 if (Name.getText().length() == 0) {
                     Name.setError("حقل مطلوب");
                     blank = true;
+                    Toast.makeText(getApplicationContext(), "اكمل البيانات", Toast.LENGTH_LONG).show();
                 }
                 if (textMessage.getText().length() == 0) {
                     textMessage.setError("حقل مطلوب");
                     blank = true;
+                    Toast.makeText(getApplicationContext(), "اكمل البيانات", Toast.LENGTH_LONG).show();
                 }
                 if (ID.getText().length() == 0) {
                     ID.setError("حقل مطلوب");
                     blank = true;
+                    Toast.makeText(getApplicationContext(), "اكمل البيانات", Toast.LENGTH_LONG).show();
                 }
                 if (phone.getText().length() == 0) {
                     phone.setError("حقل مطلوب");
                     blank = true;
+                    Toast.makeText(getApplicationContext(), "اكمل البيانات", Toast.LENGTH_LONG).show();
                 }
                 if (phone.getText().length() < 10 && phone.getText().length() > 0 ) {
                     phone.setError("ادخل ١٠ آرقام");
                     blank = true;
+                    Toast.makeText(getApplicationContext(), "اكمل البيانات", Toast.LENGTH_LONG).show();
                 }
-                if (ID.getText().length() < 10 && ID.getText().length() > 0 ) {
-                    ID.setError("ادخل ١٠ آرقام");
+                if (ID.getText().length() < 8 && ID.getText().length() > 0 ) {
+                    ID.setError("ادخل ٨ ارقام");
                     blank = true;
+                    Toast.makeText(getApplicationContext(), "اكمل البيانات", Toast.LENGTH_LONG).show();
                 }
                 if (select.equals("اختر")){
                     blank = true;
@@ -116,10 +122,7 @@ public class SendEmail extends AppCompatActivity {
                 }
 
 
-                // final EditText ErrorMassage = (EditText) findViewById(R.id.editTextSubject);
 
-
-                //   textSubject.setError("msg error");
 
 
 
