@@ -108,8 +108,8 @@ public class SendEmail extends AppCompatActivity {
                     blank = true;
                     Toast.makeText(getApplicationContext(), "اكمل البيانات", Toast.LENGTH_LONG).show();
                 }
-                if (ID.getText().length() < 8 && ID.getText().length() > 0 ) {
-                    ID.setError("ادخل ٨ ارقام");
+                if (ID.getText().length() < 10 && ID.getText().length() > 0 ) {
+                    ID.setError("ادخل ١٠ آرقام");
                     blank = true;
                     Toast.makeText(getApplicationContext(), "اكمل البيانات", Toast.LENGTH_LONG).show();
                 }
@@ -117,9 +117,17 @@ public class SendEmail extends AppCompatActivity {
                     blank = true;
                     Toast.makeText(getApplicationContext(), "اختر تصنيف", Toast.LENGTH_LONG).show();
                 }
+
+                if ( phone.getText().toString().charAt(1) != '5' || phone.getText().toString().charAt(0) != '0' ) {
+                    phone.setError("ادخل رقم جوال صحيح");
+                    blank = true;
+                    Toast.makeText(getApplicationContext(), "اكمل البيانات" , Toast.LENGTH_LONG).show();
+                }
+
                 if (!blank) {
                     startActivity(Intent.createChooser(email, "Choose an Email client :"));
                 }
+
 
 
 
