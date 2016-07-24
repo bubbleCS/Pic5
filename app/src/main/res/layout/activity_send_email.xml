@@ -117,6 +117,7 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/square"
         android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp" />
+        android:layout_marginRight="6dp"
+        android:allowUndo="true" />
 
 </RelativeLayout>

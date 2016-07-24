@@ -1,6 +1,7 @@
 package aj.afnan.pic5;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -82,11 +83,7 @@ public class MainActivity extends AppCompatActivity {
         Forms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), WebViewActivity.class);
-                String name = "http://www.tvtc.gov.sa/Arabic/Departments/Departments/pt/InformationCenter/Files/Pages/default.aspx";
-                Bundle bundle = new Bundle();
-                bundle.putString("name", name);
-                intent.putExtras(bundle);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.tvtc.gov.sa/Arabic/Departments/Departments/pt/InformationCenter/Files/Pages/default.aspx"));
                 startActivity(intent);
             }
         });
